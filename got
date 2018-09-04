@@ -1,0 +1,40 @@
+#!/bin/sh
+# 快速创建 go 模板文件, 学习 go 的时候，每次创建 go 文件,加上 package 太麻烦
+# go file_name //　创建 or 编辑
+# go file_name r // 执行
+template_dir=~/.create_template
+template_file="$template_dir/template.go"
+template_str="package main
+
+import (
+    \"fmt\"
+)
+
+func main() {
+
+}
+" 
+
+if [ ! -d "$template_dir" ]; then
+        mkdir "$template_dir"
+fi
+
+if [ ! -f "$template_file" ]; then
+        echo "$template_str" > $template_file
+fi
+
+if [ ! "$1" ]; then
+        echo "文件名参数不能为空"
+        exit 0
+fi
+
+if [ -f "$1.go" ]; then
+        if [ "r" = "$2" ]; then
+                go run $1.go
+                exit 0
+        fi
+        vim $1.go
+        exit 0
+fi
+
+vim $1.go -c "r $template_file"
