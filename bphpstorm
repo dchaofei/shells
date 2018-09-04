@@ -1,0 +1,4 @@
+#!/bin/bash
+
+nohup phpstorm >> /dev/null 2>&1 &
+echo "等待启动 phpstorm ..."
