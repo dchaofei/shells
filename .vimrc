@@ -115,3 +115,10 @@ filetype plugin indent on    " required
 let g:rehash256 = 1
 let g:molokai_original = 1
 colorscheme molokai
+
+" 支持透明背景
+hi Normal ctermbg=none
+hi NonText ctermbg=none
+hi LineNr ctermbg=none
+" 设置行号的颜色
+:highlight LineNr ctermfg=white
