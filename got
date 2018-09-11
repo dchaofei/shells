@@ -13,7 +13,7 @@ import (
 func main() {
 
 }
-" 
+"
 
 if [ ! -d "$template_dir" ]; then
         mkdir "$template_dir"
@@ -36,11 +36,12 @@ fi
 
 if [ -f "$file_name" ]; then
         if [ "r" = "$2" ]; then
-                go run $file_name
+                go run $file_name ${*:3}
                 exit 0
         fi
         vim $file_name
         exit 0
 fi
 
-vim $file_name -c "r $template_file"
+# vim $file_name -c "r $template_file"
+vim $file_name
