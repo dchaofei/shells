@@ -28,6 +28,7 @@ function! s:build_go_files()
 endfunction
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go call SetMolokai() 
 let g:go_fmt_command = "goimports"
 " 美化代码
 let g:go_highlight_types = 1
@@ -111,14 +112,21 @@ Plugin 'scrooloose/nerdtree'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" 为 molokai 颜色插件
-let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
+function SetMolokai()
+	" 为 molokai 颜色插件
+	let g:rehash256 = 1
+	let g:molokai_original = 1
+	colorscheme molokai
 
-" 支持透明背景
-hi Normal ctermbg=none
-hi NonText ctermbg=none
-hi LineNr ctermbg=none
-" 设置行号的颜色
-:highlight LineNr ctermfg=white
+	" 支持透明背景
+	hi Normal ctermbg=none
+	hi NonText ctermbg=none
+	hi LineNr ctermbg=none
+	" 设置行号的颜色
+	:highlight LineNr ctermfg=white
+endfunction
+
+"function GoRunCurrent()
+"	!go run "%"
+"endfunction
+"autocmd filetype go nmap <leader>. :call GoRunCurrent()<Enter>

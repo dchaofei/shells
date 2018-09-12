@@ -14,6 +14,12 @@ func main() {
 
 }
 "
+pre_command="
+function GoRunCurrent()
+        !go run "%"
+endfunction
+autocmd filetype go nmap <leader>. :call GoRunCurrent()<Enter>
+"
 
 if [ ! -d "$template_dir" ]; then
         mkdir "$template_dir"
@@ -39,9 +45,9 @@ if [ -f "$file_name" ]; then
                 go run $file_name ${*:3}
                 exit 0
         fi
-        vim $file_name
+        vim $file_name --cmd "$pre_command"
         exit 0
 fi
 
 # vim $file_name -c "r $template_file"
-vim $file_name
+vim $file_name --cmd "$pre_command"
