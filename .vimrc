@@ -8,7 +8,8 @@ set nu
 " 设置匹配括号高亮显示
 set showmatch
 set matchtime=0
-
+set laststatus=2
+set t_Co=256
 
 " go-vim settings
 let mapleader = ","
@@ -28,7 +29,9 @@ function! s:build_go_files()
 endfunction
 autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
 autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
-autocmd FileType go call SetMolokai() 
+autocmd FileType go call SetMolokai_() 
+autocmd FileType go nmap ge <Plug>(go-def-pop)
+autocmd FileType go nmap dc :GoDecls<CR>
 let g:go_fmt_command = "goimports"
 " 美化代码
 let g:go_highlight_types = 1
@@ -107,12 +110,16 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'fatih/molokai'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'scrooloose/nerdtree'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'NLKNguyen/papercolor-theme'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-function SetMolokai()
+function SetMolokai_()
 	" 为 molokai 颜色插件
 	let g:rehash256 = 1
 	let g:molokai_original = 1
@@ -123,10 +130,36 @@ function SetMolokai()
 	hi NonText ctermbg=none
 	hi LineNr ctermbg=none
 	" 设置行号的颜色
-	:highlight LineNr ctermfg=white
+	highlight LineNr ctermfg=white
 endfunction
 
 "function GoRunCurrent()
 "	!go run "%"
 "endfunction
 "autocmd filetype go nmap <leader>. :call GoRunCurrent()<Enter>
+
+" 状态栏
+let g:airline#extensions#tabline#enabled = 1
+
+set hidden " 避免必须保存修改才可以跳转buffer
+
+" buffer快速导航
+nnoremap <Leader>f :bn<CR>
+
+" 查看buffers
+nnoremap <Leader>l :ls<CR>
+
+" 通过索引快速跳转
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+
+" NERDTree config
+ map <F3> :NERDTreeToggle<CR>
