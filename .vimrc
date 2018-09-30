@@ -54,10 +54,10 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 let g:go_list_type = "quickfix"
 " 显示函数签名信息
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
-" let g:go_auto_type_info = 1
-"set updatetime=100
+let g:go_auto_type_info = 1
+set updatetime=100
 " 高亮显示标识符
-" let g:go_auto_sameids = 1
+let g:go_auto_sameids = 1
 
 
 
