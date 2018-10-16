@@ -1,0 +1,9 @@
+#!/bin/bash
+file=$(readlink -f ./yii)
+
+if [ ! -f "$file" ]; then
+	echo -e "\033[47;31m没有找到 $file 文件 \033[0m"
+	exit 404
+fi
+
+./yii $*
