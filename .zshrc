@@ -113,7 +113,7 @@ export LANG="zh_CN.UTF-8"
 alias py="python3.6"
 
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-export LESS=" -R -N"
+export LESS=" -R"
 
 # go
 export GOPATH=$HOME/go_work
