@@ -9,3 +9,8 @@
     $ <leader> + . vim 内执行
     ```
 4. [yii](https://github.com/dchaofei/shells/blob/master/yii) 执行 yii command
+5. [inflect](https://github.com/dchaofei/shells/blob/master/inflect) 英语单词单数转复数
+    ```bash
+    $ inflect number
+    numbers
+    ```
