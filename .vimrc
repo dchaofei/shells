@@ -139,7 +139,7 @@ endfunction
 "autocmd filetype go nmap <leader>. :call GoRunCurrent()<Enter>
 
 " 状态栏
-let g:airline#extensions#tabline#enabled = 1
+ let g:airline#extensions#tabline#enabled = 1
 
 set hidden " 避免必须保存修改才可以跳转buffer
 

@@ -1,0 +1,6 @@
+#!/bin/bash
+# see http://fiddler.wikidot.com/mono
+
+nohup mono /opt/fiddler/Fiddler.exe >> /tmp/mono_fiddler.log 2>&1 &
+echo "正在启动fiddler..."
+

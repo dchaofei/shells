@@ -9,3 +9,4 @@
     $ <leader> + . vim 内执行
     ```
 4. [yii](https://github.com/dchaofei/shells/blob/master/yii) 执行 yii command
+5. [fiddler](https://github.com/dchaofei/shells/blob/master/fiddler) 启动 fiddler

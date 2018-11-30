@@ -118,3 +118,8 @@ export LESS=" -R"
 # go
 export GOPATH=$HOME/go_work
 export PATH=$PATH:$GOPATH/bin:~/shells
+
+#goland
+export PATH=$PATH:/opt/GoLand-2018.2.3/bin
+
+export PATH=$PATH:/home/victor/.config/composer/vendor/bin
