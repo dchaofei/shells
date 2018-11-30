@@ -10,3 +10,8 @@
     ```
 4. [yii](https://github.com/dchaofei/shells/blob/master/yii) 执行 yii command
 5. [fiddler](https://github.com/dchaofei/shells/blob/master/fiddler) 启动 fiddler
+6. [inflect](https://github.com/dchaofei/shells/blob/master/inflect) 英语单词单数转复数
+    ```bash
+    $ inflect number
+    numbers
+    ```
