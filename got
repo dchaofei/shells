@@ -36,17 +36,22 @@ fi
 
 file_name=$1
 
+# 截取后三位如果为空则加.go后缀，兼容文件名少于3个长度的
+if [ -z ${file_name:(-3)} ]; then
+	file_name=$file_name".go"
+fi
+
+# 如果后三位不含 .go 则加上 .go
 if [ ! ${file_name:(-3)} = '.go' ]; then
         file_name=$file_name".go"
 fi
 
+# 如果文件已存在，并且 第二个参数为 r 则执行，否则打开
 if [ -f "$file_name" ]; then
         if [ "r" = "$2" ]; then
                 go run $file_name ${*:3}
                 exit 0
         fi
-        vim $file_name --cmd "$pre_command"
-        exit 0
 fi
 
 # vim $file_name -c "r $template_file"
