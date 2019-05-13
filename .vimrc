@@ -15,6 +15,13 @@ set pastetoggle=<F9>
 " set mouse=a
 " 显示当前所在行
 set cursorline
+" 括号补全
+inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
+inoremap { {}<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+inoremap < <><LEFT>
 
 set nocompatible              " be iMproved, required 关闭vim处于历史兼容型的考虑而设置的vi模式
 filetype off                  " required 自动检测文件类型
