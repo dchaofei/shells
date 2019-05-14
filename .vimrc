@@ -69,6 +69,8 @@ nnoremap <leader>a :cclose<CR>
 " autocmd FileType go nmap <leader>b <Plug>(go-build)
 " GoRun
 autocmd FileType go nmap <leader>r <Plug>(go-run)
+" 使用 vim 终端打开
+autocmd FileType go nmap <leader>lr :terminal go run %<CR>
 " 让所有的都用 quickfix
 let g:go_list_type = "quickfix"
 " GoTest
@@ -130,7 +132,7 @@ au InsertEnter * exec "inoremap <silent> " .     g:UltiSnipsJumpBackwardTrigger 
 " 禁用保存文件时 展示 quickfix list 错误
 " let g:go_fmt_fail_silently = 1
 " 修改生成 json tag 的方式 camelcase or snake_case
-let g:go_addtags_transform = "camelcase"
+" let g:go_addtags_transform = "camelcase"
 
 "*********** 启动更多颜色，语法高亮，默认启用少量 ************
 " 类型 type 高亮
@@ -218,3 +220,37 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 "******************************
+
+"*********** vim 终端 ************
+if has('terminal')
+  " Kill job and close terminal window
+  tnoremap <Leader>q <C-w><C-c><C-w>c<cr>
+
+  " switch to normal mode with esc
+  "tnoremap <Esc> <C-W>N
+
+  " mappings to move out from terminal to other views
+  tnoremap <C-h> <C-w>h
+  tnoremap <C-j> <C-w>j
+  tnoremap <C-k> <C-w>k
+  tnoremap <C-l> <C-w>l
+ 
+  " Open terminal in vertical, horizontal and new tab
+  nnoremap <leader>tv :vsplit<cr>:term ++curwin<CR>
+  nnoremap <leader>ts :split<cr>:term ++curwin<CR>
+  nnoremap <leader>tt :tabnew<cr>:term ++curwin<CR>
+
+  tnoremap <leader>tv <C-w>:vsplit<cr>:term ++curwin<CR>
+  tnoremap <leader>ts <C-w>:split<cr>:term ++curwin<CR>
+  tnoremap <leader>tt <C-w>:tabnew<cr>:term ++curwin<CR>
+
+  " always start terminal in insert mode when I switch to it
+  " NOTE(arslan): startinsert doesn't work in Terminal-normal mode.
+  autocmd WinEnter * if &buftype == 'terminal' | call feedkeys("i") | endif
+endif
+"*********************************
+
+"********* 补全括号插件 **********
+" 括号内回车自动换行格式化
+let g:delimitMate_expand_cr = 1
+"*********************************
