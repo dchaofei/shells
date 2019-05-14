@@ -37,6 +37,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin' " git 插件
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive' " 状态栏显示 git 分支
+Plugin 'majutsushi/tagbar' " 代码视图、方法、变量 
+Plugin 'Raimondi/delimitMate' " 括号补全
 " Plugin 'Blackrush/vim-gocode' " go代码提示
 " 安装插件写在这之前
 call vundle#end()            " required
