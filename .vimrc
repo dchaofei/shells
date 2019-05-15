@@ -244,6 +244,9 @@ if has('terminal')
   tnoremap <leader>ts <C-w>:split<cr>:term ++curwin<CR>
   tnoremap <leader>tt <C-w>:tabnew<cr>:term ++curwin<CR>
 
+  " 进入正常模式 Ctrl+W+N
+  " 离开正常模式 i or a
+
   " always start terminal in insert mode when I switch to it
   " NOTE(arslan): startinsert doesn't work in Terminal-normal mode.
   autocmd WinEnter * if &buftype == 'terminal' | call feedkeys("i") | endif
