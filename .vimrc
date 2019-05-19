@@ -257,3 +257,8 @@ endif
 " 括号内回车自动换行格式化
 let g:delimitMate_expand_cr = 1
 "*********************************
+
+"***********YouCompleteMe**************
+"自动关闭预览窗口
+let g:ycm_autoclose_preview_window_after_insertion = 1
+"**************************************
