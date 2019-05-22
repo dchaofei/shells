@@ -259,6 +259,9 @@ let g:delimitMate_expand_cr = 1
 "*********************************
 
 "***********YouCompleteMe**************
-"自动关闭预览窗口
+" 自动关闭预览窗口
 let g:ycm_autoclose_preview_window_after_insertion = 1
+" 触发补全
+let g:ycm_key_invoke_completion = '<c-z>'
+" ctrl y 取消补全
 "**************************************
