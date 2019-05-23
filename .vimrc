@@ -155,18 +155,6 @@ let g:go_highlight_generate_tags = 1
 
 " tab 设置 4 空格
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
-"********* 颜色方案 *********
-let g:rehash256 = 1
-let g:molokai_original = 1
-colorscheme molokai
-" 支持透明背景
-hi Normal ctermbg=none
-hi NonText ctermbg=none
-hi LineNr ctermbg=none
-" 设置行号的颜色
-highlight LineNr ctermfg=white
-"set t_Co=256
-"****************************
 
 " 保存时调用 GoMetaLinter：let g:go_metalinter_autosave_enabled = ['vet',
 " 'golint']
@@ -258,10 +246,25 @@ endif
 let g:delimitMate_expand_cr = 1
 "*********************************
 
-"***********YouCompleteMe**************
+"***********youcompleteme**************
 " 自动关闭预览窗口
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " 触发补全
 let g:ycm_key_invoke_completion = '<c-z>'
 " ctrl y 取消补全
 "**************************************
+
+"********* 颜色方案 *********
+let g:rehash256 = 1
+let g:molokai_original = 1
+colorscheme molokai
+" 支持透明背景
+hi normal ctermbg=none
+hi nontext ctermbg=none
+hi linenr ctermbg=none
+" 设置行号的颜色
+highlight linenr ctermfg=white
+highlight Visual ctermfg=white ctermbg=red
+"set t_co=256
+"****************************
+
