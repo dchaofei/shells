@@ -1,4 +1,4 @@
-set nu! " 显示行号
+set nu " 显示行号
 syntax on " 代码高亮
 set ts=4 " 设置tab键空格数量
 set backspace=2 " 解决删除键失效
@@ -39,6 +39,11 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive' " 状态栏显示 git 分支
 Plugin 'majutsushi/tagbar' " 代码视图、方法、变量 
 Plugin 'Raimondi/delimitMate' " 括号补全
+Plugin 'tpope/vim-surround' " 为句子、单词添加成对的符号
+Plugin 'tpope/vim-repeat' " 重复一个插件操作　按 .
+Plugin 'mhinz/vim-startify' " vim 启动界面
+Plugin 'easymotion/vim-easymotion' " 快速移动光标　类似于 chrome cvim
+Plugin 'airblade/vim-gitgutter' " 在vim里显示git变动
 " Plugin 'Blackrush/vim-gocode' " go代码提示
 " 安装插件写在这之前
 call vundle#end()            " required
@@ -59,6 +64,8 @@ filetype plugin on    " required
 
 " 设置 leader 键
 let mapleader = ","
+" 保存快捷键
+nmap <leader>w :w<CR>
 " quickfix 下一个
 map <C-n> :cnext<CR>
 " quickfix 上一个
@@ -266,5 +273,9 @@ hi linenr ctermbg=none
 highlight linenr ctermfg=white
 highlight Visual ctermfg=white ctermbg=red
 "set t_co=256
+"****************************
+
+"********* tagbar ***********
+nmap <F10> :TagbarToggle<CR>
 "****************************
 
