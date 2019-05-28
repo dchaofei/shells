@@ -43,7 +43,8 @@ Plugin 'tpope/vim-surround' " 为句子、单词添加成对的符号
 Plugin 'tpope/vim-repeat' " 重复一个插件操作　按 .
 Plugin 'mhinz/vim-startify' " vim 启动界面
 Plugin 'easymotion/vim-easymotion' " 快速移动光标　类似于 chrome cvim
-Plugin 'airblade/vim-gitgutter' " 在vim里显示git变动
+Plugin 'airblade/vim-gitgutter' " 在vim里显示 git 变动
+Plugin 'junegunn/gv.vim' " vim　使用 git commit 浏览
 " Plugin 'Blackrush/vim-gocode' " go代码提示
 " 安装插件写在这之前
 call vundle#end()            " required
@@ -279,3 +280,8 @@ highlight Visual ctermfg=white ctermbg=red
 nmap <F10> :TagbarToggle<CR>
 "****************************
 
+"*********gitgutter**********
+highlight GitGutterAdd    guifg=#009900 ctermfg=2 
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3 
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+"****************************
