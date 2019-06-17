@@ -8,9 +8,9 @@ set autowrite " 自动保存内容
 set hlsearch " 高亮搜索 :nohlsearch or :noh 清除最近一次高亮搜索
 set ignorecase " 搜索区分大小写
 set smartcase " 自动判断是否区分大小写
-"set paste " 解决粘贴乱码
+" set paste " 解决粘贴乱码
 " 切换自动缩进快捷键
-set pastetoggle=<F9>
+" set pastetoggle=<F9>
 " 开启所有模式鼠标支持
 " set mouse=a
 " 显示当前所在行
@@ -99,6 +99,8 @@ autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 " let g:go_fmt_autosave = 1
 " 替换 GoFmt 为 GoImports
 let g:go_fmt_command = "goimports"
+" 使用 godef 代替 guru
+let g:go_def_mode = 'godef'
 " GoFmt 快捷键
 autocmd FileType go nmap <leader>l  <Plug>(go-imports)
 " 关闭 af 会选中函数注释
